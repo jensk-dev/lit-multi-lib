@@ -1,6 +1,7 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
+import packageProcess from "@jensk/rollup-plugin-package-process";
 
 export default defineConfig({
   publicDir: "static",
@@ -22,6 +23,22 @@ export default defineConfig({
         format: "es",
       },
       external: ["lit", "lit/decorators.js"],
+      plugins: [
+        packageProcess({
+          output: {
+            replaceExisting: true
+          },
+          process: (inputPackage) => {
+            inputPackage.peerDependencies = inputPackage.dependencies;
+            
+            delete inputPackage.devDependencies;
+            delete inputPackage.dependencies;
+            delete inputPackage.scripts;
+      
+            return inputPackage;
+          }
+        })
+      ],
     },
   },
   test: {
