@@ -2,9 +2,7 @@
   "name": "lit-multi-lib",
   "private": true,
   "version": "0.0.7",
-  "type": "module",
   "main": "index.js",
-  "module": "index.js",
   "types": "index.d.ts",
   "files": [
     "*"
@@ -26,7 +24,7 @@
     "lit": "^2.2.6"
   },
   "devDependencies": {
-    "@jensk/rollup-plugin-package-process": "0.0.2",
+    "@jensk/rollup-plugin-package-process": "0.0.3",
     "@types/jsdom": "^16.2.14",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
