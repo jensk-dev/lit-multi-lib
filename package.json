@@ -1,7 +1,7 @@
 {
   "name": "lit-multi-lib",
   "private": true,
-  "version": "0.0.7",
+  "version": "0.0.0",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
