@@ -9,9 +9,7 @@
   ],
   "browser": true,
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "vitest",
     "cover": "vitest run --coverage",
     "e2e:open": "cypress open --e2e",

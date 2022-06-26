@@ -26,18 +26,20 @@ export default defineConfig({
       plugins: [
         packageProcess({
           output: {
-            replaceExisting: true
+            replaceExisting: true,
           },
-          process: (inputPackage) => {
+          process: inputPackage => {
+            inputPackage.type = "module";
+            inputPackage.module = inputPackage.main;
             inputPackage.peerDependencies = inputPackage.dependencies;
-            
+
             delete inputPackage.devDependencies;
             delete inputPackage.dependencies;
             delete inputPackage.scripts;
-      
+
             return inputPackage;
-          }
-        })
+          },
+        }),
       ],
     },
   },
@@ -49,5 +51,5 @@ export default defineConfig({
     },
     include: ["test/**/*.spec.ts"],
   },
-  plugins: [dts({ exclude: "**/vite-env.d.ts" }) as Plugin],
+  plugins: [dts({ exclude: ["**/vite-env.d.ts"] }) as Plugin],
 });
