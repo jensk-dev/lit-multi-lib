@@ -9,7 +9,6 @@ module.exports = {
     "airbnb-base",
     "airbnb-typescript/base",
     "plugin:lit/recommended",
-    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
@@ -18,7 +17,7 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json", "./cypress/tsconfig.json"],
   },
-  plugins: ["@typescript-eslint", "tailwindcss", "lit"],
+  plugins: ["@typescript-eslint", "lit"],
   rules: {
     "no-plusplus": "off",
     "import/prefer-default-export": "off",
