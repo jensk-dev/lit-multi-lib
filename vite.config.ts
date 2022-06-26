@@ -1,14 +1,29 @@
 import { defineConfig } from "vitest/config";
-
-/**
- * The below code configures the project in page mode.
- * This bundles all assets into modules and imports them into an html file which can be served to the user.
- * Currently this config has 1 entry point, for a multi page app see: https://vitejs.dev/guide/build.html#multi-page-app
- * This method includes lit.
- */
+import { resolve } from "path";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  build: {},
+  publicDir: "static",
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src"),
+      formats: ["es"],
+    },
+    terserOptions: {
+      ecma: 2020,
+      module: true,
+    },
+    minify: "terser",
+    rollupOptions: {
+      preserveEntrySignatures: "strict",
+      output: {
+        preserveModules: true,
+        entryFileNames: "[name].js",
+        format: "es",
+      },
+      external: ["lit", "lit/decorators.js"],
+    },
+  },
   test: {
     globals: true,
     environment: "happy-dom",
@@ -17,4 +32,5 @@ export default defineConfig({
     },
     include: ["test/**/*.spec.ts"],
   },
+  plugins: [dts({ exclude: "**/vite-env.d.ts" }) as Plugin],
 });

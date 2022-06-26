@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "importsNotUsedAsValues": "error",
-    "module": "esnext",
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "target": "es2019",
+    "module": "es2015",
+    "lib": ["es2019", "dom", "dom.iterable"],
     "plugins": [
       {
         "name": "ts-lit-plugin",
@@ -10,6 +10,7 @@
       }
     ],
     "declaration": true,
+    "declarationMap": true,
     "emitDeclarationOnly": true,
     "outDir": "./types",
     "strict": true,
@@ -23,9 +24,10 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "importsNotUsedAsValues": "error"
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
