@@ -10,13 +10,8 @@ export default defineConfig({
       entry: resolve(__dirname, "src"),
       formats: ["es"],
     },
-    terserOptions: {
-      ecma: 2020,
-      module: true,
-    },
-    minify: "terser",
+    target: "es2020",
     rollupOptions: {
-      preserveEntrySignatures: "strict",
       output: {
         preserveModules: true,
         entryFileNames: "[name].js",
