@@ -20,8 +20,8 @@
   "devDependencies": {
     "@jensk/rollup-plugin-package-process": "0.0.8",
     "@types/jsdom": "^16.2.14",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "autoprefixer": "^10.4.7",
     "c8": "^7.11.3",
     "concurrently": "^7.2.2",
@@ -33,14 +33,14 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-lit": "^1.6.1",
-    "happy-dom": "^6.0.2",
+    "happy-dom": "^6.0.3",
     "lit-analyzer": "2.0.0-pre.2",
     "postcss": "^8.4.14",
     "prettier": "2.7.1",
     "ts-lit-plugin": "^1.2.1",
     "typescript": "^4.7.4",
-    "vite": "3.0.0-beta.7",
-    "vite-plugin-dts": "^1.2.1",
-    "vitest": "^0.17.1"
+    "vite": "^3.0.0",
+    "vite-plugin-dts": "^1.3.0",
+    "vitest": "^0.18.0"
   }
 }
