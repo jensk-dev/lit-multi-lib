@@ -17,22 +17,27 @@ describe("sum-component", async () => {
 
   beforeEach(async () => {
     // render the component
-    render(html`<border-component><span>Bordered Text</span></border-component>`, document.body)
+    render(
+      html`<border-component><span>Bordered Text</span></border-component>`,
+      document.body
+    );
     // wait for happyDom to initialize
     await window.happyDOM.whenAsyncComplete();
     // store initialized state
-    element = document.body.querySelector("border-component") as BorderComponent;
+    element = document.body.querySelector(
+      "border-component"
+    ) as BorderComponent;
   });
 
   it("renders border", async () => {
     // expect shadowroot
-    expect(element.shadowRoot).to.exist;
+    expect(element.shadowRoot).toBeDefined();
 
     // get inner div
     const div = element.shadowRoot!.querySelector("div");
 
-    expect(div).to.exist;
-    expect(div?.classList.contains("border")).to.be.true;
+    expect(div).toBeDefined();
+    expect(div?.classList.contains("border")).toBe(true);
   });
 
   it("renders slotted element", async () => {
@@ -40,7 +45,7 @@ describe("sum-component", async () => {
     const slotted = element.querySelector("span");
 
     // get inner div
-    expect(slotted).to.exist;
+    expect(slotted).toBeDefined();
     expect(slotted?.innerText).to.equal("Bordered Text");
   });
 });

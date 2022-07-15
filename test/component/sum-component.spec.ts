@@ -17,7 +17,10 @@ describe("sum-component", async () => {
 
   beforeEach(async () => {
     // render the component
-    render(html`<sum-component .a="${4}" .b="${2}"></sum-component>`, document.body)
+    render(
+      html`<sum-component .a="${4}" .b="${2}"></sum-component>`,
+      document.body
+    );
     // wait for happyDom to initialize
     await window.happyDOM.whenAsyncComplete();
     // store initialized state
@@ -26,7 +29,7 @@ describe("sum-component", async () => {
 
   it("sums a & b", async () => {
     // expect shadowroot
-    expect(element.shadowRoot).to.exist;
+    expect(element.shadowRoot).toBeDefined();
 
     // get inner div
     const div = element.shadowRoot!.querySelector("div");
