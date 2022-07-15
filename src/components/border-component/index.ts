@@ -1,4 +1,4 @@
-import type { TemplateResult} from "lit";
+import type { TemplateResult } from "lit";
 import { html, LitElement, unsafeCSS } from "lit";
 import { customElement } from "lit/decorators.js";
 
