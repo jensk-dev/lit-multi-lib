@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "module": "es2015",
-    "lib": ["es2019", "dom", "dom.iterable"],
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "plugins": [
       {
         "name": "ts-lit-plugin",

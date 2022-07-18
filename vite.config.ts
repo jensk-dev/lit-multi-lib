@@ -17,7 +17,7 @@ export default defineConfig({
         entryFileNames: "[name].js",
         format: "es",
       },
-      external: ["lit", "lit/decorators.js"],
+      external: [/^lit/],
       plugins: [
         packageProcess({
           output: {
